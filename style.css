@@ -1,0 +1,1357 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #09090d;
+    color: #f5f1ea;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(140, 105, 160, 0.16),
+            transparent 45%
+        ),
+        #09090d;
+
+    transition: background 1.5s ease;
+}
+
+
+/* =========================================================
+   INTRO BACKGROUND
+========================================================= */
+
+body:has(#intro.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(140, 105, 160, 0.16),
+            transparent 45%
+        ),
+        #09090d;
+}
+
+
+/* =========================================================
+   CHAPTER 1
+   THE GARDEN
+========================================================= */
+
+body:has(#chapter1.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(100, 145, 110, 0.24),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(45, 90, 55, 0.20),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #07100b,
+            #101b13,
+            #080d0a
+        );
+}
+
+
+/* Garden moon */
+
+body:has(#chapter1.active) .glow {
+
+    width: 420px;
+    height: 420px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(210, 230, 205, 0.10),
+            transparent 65%
+        );
+
+    filter: blur(40px);
+}
+
+
+/* =========================================================
+   CHAPTER 2
+   THE GOODBYE
+========================================================= */
+
+body:has(#chapter2.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(90, 120, 160, 0.18),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #070a10,
+            #101722,
+            #080a0f
+        );
+}
+
+
+/* Cold moonlight */
+
+body:has(#chapter2.active) .glow {
+
+    width: 480px;
+    height: 480px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(150, 180, 220, 0.08),
+            transparent 65%
+        );
+
+    filter: blur(55px);
+}
+
+
+/* =========================================================
+   CHAPTER 3
+   THE FEELINGS
+========================================================= */
+
+body:has(#chapter3.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(160, 95, 130, 0.22),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(190, 130, 100, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #10090f,
+            #1b1019,
+            #09080c
+        );
+}
+
+
+body:has(#chapter3.active) .glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(220, 130, 160, 0.10),
+            transparent 65%
+        );
+
+    filter: blur(60px);
+}
+
+
+/* =========================================================
+   CHAPTER 4
+   AUGUST 25
+========================================================= */
+
+body:has(#chapter4.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(200, 125, 105, 0.24),
+            transparent 48%
+        ),
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(145, 80, 115, 0.16),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #160b0a,
+            #1d1015,
+            #0b080a
+        );
+}
+
+
+body:has(#chapter4.active) .glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(230, 150, 115, 0.12),
+            transparent 65%
+        );
+
+    filter: blur(55px);
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+body:has(#ending.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(140, 105, 160, 0.18),
+            transparent 45%
+        ),
+        #09090d;
+}
+
+
+/* =========================================================
+   BIRTHDAY
+========================================================= */
+
+body:has(#birthday.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(190, 140, 175, 0.26),
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(120, 100, 170, 0.13),
+            transparent 40%
+        ),
+        #0b090e;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(160, 110, 180, 0.08);
+
+    filter: blur(100px);
+
+    transition:
+        background 1.5s ease,
+        width 1.5s ease,
+        height 1.5s ease;
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.stars::before,
+.stars::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -100% 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.75) 1px,
+            transparent 1px
+        );
+
+    background-size: 130px 130px;
+
+    opacity: .25;
+
+    animation:
+        drift 16s linear infinite;
+}
+
+
+.stars::after {
+
+    background-size: 190px 190px;
+
+    opacity: .14;
+
+    animation:
+        drift 23s linear infinite reverse;
+}
+
+
+@keyframes drift {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(130px);
+    }
+
+}
+
+
+/* =========================================================
+   CHAPTER 1
+   GARDEN LEAVES
+========================================================= */
+
+body:has(#chapter1.active)::before,
+body:has(#chapter1.active)::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 100% 0 100% 0;
+
+    border: 1px solid rgba(150, 190, 145, 0.10);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+body:has(#chapter1.active)::before {
+
+    left: -90px;
+    bottom: -40px;
+
+    transform: rotate(25deg);
+
+    box-shadow:
+        80px -40px 0 -20px rgba(110,160,110,.07),
+        130px -100px 0 -35px rgba(110,160,110,.06);
+}
+
+
+body:has(#chapter1.active)::after {
+
+    right: -100px;
+    top: -50px;
+
+    transform: rotate(205deg);
+
+    box-shadow:
+        -80px 50px 0 -20px rgba(110,160,110,.07),
+        -130px 110px 0 -35px rgba(110,160,110,.06);
+}
+
+
+/* =========================================================
+   CHAPTER 2
+   RAIN EFFECT
+========================================================= */
+
+body:has(#chapter2.active)::before {
+
+    content: "";
+
+    position: fixed;
+    inset: -100% 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(170,190,215,.08) 1%,
+            transparent 2%
+        );
+
+    background-size: 9px 45px;
+
+    opacity: .18;
+
+    animation: rain 1.8s linear infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes rain {
+
+    from {
+        transform: translateY(-20%);
+    }
+
+    to {
+        transform: translateY(20%);
+    }
+
+}
+
+
+/* =========================================================
+   CHAPTER 3
+   WARM FLOATING PARTICLES
+========================================================= */
+
+body:has(#chapter3.active) .stars::before {
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,190,210,.75) 1px,
+            transparent 2px
+        );
+
+    background-size: 150px 150px;
+
+    opacity: .24;
+
+    animation:
+        warmFloat 11s linear infinite;
+}
+
+
+body:has(#chapter3.active) .stars::after {
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,210,180,.55) 1px,
+            transparent 2px
+        );
+
+    opacity: .15;
+
+    animation:
+        warmFloat 17s linear infinite reverse;
+}
+
+
+@keyframes warmFloat {
+
+    from {
+        transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(-150px);
+    }
+
+}
+
+
+/* =========================================================
+   CHAPTER 4
+   SOFT SUNSET PARTICLES
+========================================================= */
+
+body:has(#chapter4.active) .stars::before {
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,210,180,.8) 1px,
+            transparent 2px
+        );
+
+    opacity: .25;
+
+    animation:
+        sunsetFloat 13s linear infinite;
+}
+
+
+@keyframes sunsetFloat {
+
+    from {
+        transform: translateY(120px);
+        opacity: .15;
+    }
+
+    50% {
+        opacity: .30;
+    }
+
+    to {
+        transform: translateY(-120px);
+        opacity: .15;
+    }
+
+}
+
+
+/* =========================================================
+   SCREENS
+========================================================= */
+
+.screen {
+
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+}
+
+
+.screen.active {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-content,
+.ending-content,
+.birthday-content {
+
+    text-align: center;
+
+    max-width: 700px;
+}
+
+
+.small-text {
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: rgba(245,241,234,.55);
+
+    margin-bottom: 25px;
+}
+
+
+.main-title,
+.birthday-content h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 12vw, 140px);
+
+    font-weight: 400;
+
+    line-height: .9;
+
+    margin-bottom: 25px;
+}
+
+
+.main-title span,
+.birthday-content span {
+
+    font-style: italic;
+}
+
+
+.date {
+
+    font-size: 16px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: rgba(245,241,234,.6);
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+
+    font-family: inherit;
+}
+
+
+.begin-btn,
+.next-btn {
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.04);
+
+    color: #fff;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+.begin-btn:hover,
+.next-btn:hover {
+
+    background: rgba(255,255,255,.12);
+
+    border-color: rgba(255,255,255,.5);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CHAPTER
+========================================================= */
+
+.chapter {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 50px 20px 80px;
+
+    text-align: center;
+
+    scrollbar-width: none;
+}
+
+
+.chapter::-webkit-scrollbar {
+
+    display: none;
+}
+
+
+.chapter-number {
+
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: rgba(245,241,234,.4);
+
+    margin-bottom: 15px;
+}
+
+
+.chapter h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 8vw, 80px);
+
+    font-weight: 400;
+
+    margin-bottom: 55px;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(22px, 3vw, 27px);
+
+    line-height: 1.6;
+
+    color: rgba(245,241,234,.82);
+}
+
+
+.story p {
+
+    margin-bottom: 32px;
+
+    opacity: 0;
+
+    animation:
+        storyAppear 1s ease forwards;
+}
+
+
+.story p:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.story p:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.story p:nth-child(4) {
+    animation-delay: .6s;
+}
+
+.story p:nth-child(5) {
+    animation-delay: .8s;
+}
+
+
+.highlight {
+
+    color: #fff;
+
+    font-weight: 500;
+
+    font-size: 1.08em;
+}
+
+
+.funny {
+
+    font-size: 1.2em;
+}
+
+
+.story em {
+
+    color: rgba(245,241,234,.6);
+}
+
+
+@keyframes storyAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.ending-content h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 9vw, 90px);
+
+    font-weight: 400;
+
+    margin-bottom: 35px;
+}
+
+
+.ending-line {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: rgba(245,241,234,.75);
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   BIRTHDAY
+========================================================= */
+
+.birthday-content h1 {
+
+    font-size: clamp(55px, 10vw, 110px);
+
+    margin-bottom: 35px;
+}
+
+
+.birthday-content > p:not(.small-text) {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    color: rgba(245,241,234,.7);
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+
+        padding: 25px 15px;
+    }
+
+    .chapter {
+
+        height: 90vh;
+
+        padding-top: 35px;
+    }
+
+    .chapter h2 {
+
+        margin-bottom: 40px;
+    }
+
+    .story {
+
+        font-size: 22px;
+
+        line-height: 1.55;
+    }
+
+    .story p {
+
+        margin-bottom: 27px;
+    }
+
+    .main-title {
+
+        font-size: 80px;
+    }
+
+}
+ /* =========================================================
+   CHAPTER 5
+   ONE PHOTO
+========================================================= */
+
+body:has(#chapter5.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(160, 125, 170, 0.20),
+            transparent 48%
+        ),
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(110, 100, 150, 0.12),
+            transparent 40%
+        ),
+        #0b090e;
+}
+
+
+body:has(#chapter5.active) .glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200, 160, 200, 0.10),
+            transparent 65%
+        );
+
+    filter: blur(60px);
+}
+
+
+/* Photo chapter container */
+
+.photo-chapter {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 50px 20px 80px;
+
+    text-align: center;
+
+    scrollbar-width: none;
+}
+
+
+.photo-chapter::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Intro text */
+
+.photo-intro {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(22px, 3vw, 27px);
+
+    line-height: 1.6;
+
+    color: rgba(245,241,234,.82);
+
+    margin-bottom: 50px;
+}
+
+
+.photo-intro p {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
+
+.photo-frame {
+
+    position: relative;
+
+    width: min(90%, 520px);
+
+    margin: 0 auto 65px;
+
+    padding: 12px;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(255,255,255,.16);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+
+.photo-frame:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.55);
+}
+
+
+.photo-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 650px;
+
+    object-fit: contain;
+
+    background: #111;
+
+}
+
+
+/* =========================================================
+   PHOTO MESSAGE
+========================================================= */
+
+.photo-message {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(22px, 3vw, 27px);
+
+    line-height: 1.6;
+
+    color: rgba(245,241,234,.82);
+}
+
+
+.photo-message p {
+
+    margin-bottom: 28px;
+}
+
+
+/* Future message */
+
+.future-message {
+
+    margin-top: 80px;
+
+    padding-top: 60px;
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+}
+
+
+.future-message .funny {
+
+    font-size: 1.12em;
+
+    color: rgba(255,255,255,.9);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .photo-chapter {
+
+        height: 90vh;
+
+        padding-top: 35px;
+    }
+
+    .photo-frame {
+
+        width: 94%;
+
+        padding: 8px;
+
+        margin-bottom: 50px;
+    }
+
+    .photo-message {
+
+        font-size: 22px;
+
+        line-height: 1.55;
+    }
+
+} 
+ /* =========================================================
+    VOICE MESSAGE
+ ========================================================== */
+
+body:has(#voice.active) .background {
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(135, 110, 165, 0.20),
+            transparent 48%
+        ),
+        #09080d;
+}
+
+
+body:has(#voice.active) .glow {
+
+    width: 430px;
+    height: 430px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190, 155, 205, 0.10),
+            transparent 65%
+        );
+
+    filter: blur(65px);
+}
+
+
+/* =========================================================
+   VOICE CONTENT
+ ========================================================== */
+
+.voice-content {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    text-align: center;
+}
+
+
+/* Intro */
+
+.voice-intro {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(22px, 3vw, 27px);
+
+    color: rgba(245,241,234,.60);
+
+    margin-bottom: 25px;
+}
+
+
+/* Heading */
+
+.voice-content h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 8vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    margin-bottom: 65px;
+}
+
+
+/* =========================================================
+   CUSTOM AUDIO PLAYER
+ ========================================================== */
+
+.voice-player {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 60px;
+}
+
+
+/* Play button */
+
+.play-button {
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.04);
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    padding-left: 5px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.play-button:hover {
+
+    transform: scale(1.06);
+
+    background: rgba(255,255,255,.09);
+
+    border-color: rgba(255,255,255,.45);
+
+    box-shadow:
+        0 0 40px rgba(190,155,205,.12);
+}
+
+
+/* Playing animation */
+
+.play-button.playing {
+
+    animation:
+        voicePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes voicePulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0 rgba(190,155,205,0);
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 45px rgba(190,155,205,.20);
+    }
+
+}
+
+
+/* Status */
+
+#voiceStatus {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: rgba(245,241,234,.45);
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+ ========================================================== */
+
+.voice-next {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        visibility .8s;
+}
+
+
+.voice-next.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+ ========================================================== */
+
+@media (max-width: 600px) {
+
+    .voice-content {
+
+        padding: 0 15px;
+    }
+
+    .voice-content h2 {
+
+        font-size: 52px;
+
+        margin-bottom: 55px;
+    }
+
+    .play-button {
+
+        width: 82px;
+        height: 82px;
+    }
+
+}
